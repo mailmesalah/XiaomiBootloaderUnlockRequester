@@ -17,6 +17,8 @@ public class UnlockAutomatorService extends AccessibilityService {
 
     private static final String TAG = "TapperDebug";
     private boolean isRunning = false;
+    private static final int dur = 30;
+    private static final int delay = 30;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     @Override
@@ -67,10 +69,10 @@ public class UnlockAutomatorService extends AccessibilityService {
             if (currentHour == targetTriggerHour && currentMin == targetTriggerMin && currentSec >= 58) {
                 isRunning = true;
 
-                String targetText = prefs.getString("button_text", "Apply for unlocking permissions");
-                int fallbackX = prefs.getInt("x_coord", 540);
-                int fallbackY = prefs.getInt("y_coord", 1850);
-                int durationSecs = prefs.getInt("duration_secs", 6);
+                String targetText = prefs.getString("button_text", "Apply for unlocking");
+                int fallbackX = prefs.getInt("x_coord", 450);
+                int fallbackY = prefs.getInt("y_coord", 2150);
+                int durationSecs = prefs.getInt("duration_secs", dur);
 
                 Log.i(TAG, "!!! TARGET REACHED !!! Shifting execution to UI Thread.");
 
@@ -122,7 +124,7 @@ public class UnlockAutomatorService extends AccessibilityService {
                 }
 
                 // Loop layout runs every 50ms safely on main execution thread parameters
-                mainHandler.postDelayed(this, 50);
+                mainHandler.postDelayed(this, delay);
             }
         };
 

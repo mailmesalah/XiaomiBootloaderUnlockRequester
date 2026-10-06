@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         edtXCoord.setText(String.valueOf(prefs.getInt("x_coord", 450)));
         edtYCoord.setText(String.valueOf(prefs.getInt("y_coord", 2150)));
 
-        edtDuration.setText(String.valueOf(prefs.getInt("duration_secs", 6)));
+        edtDuration.setText(String.valueOf(prefs.getInt("duration_secs", 30)));
 
         findViewById(R.id.btn_open_settings).setOnClickListener(v ->
                 startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
