@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://android.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_open_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable Service Permissions"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Date & Time Row -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target Schedule"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+            <Button
+                android:id="@+id/btn_pick_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pick Date"
+                android:layout_marginEnd="4dp"/>
+            <Button
+                android:id="@+id/btn_pick_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pick Time"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_selected_datetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No target time selected"
+            android:textColor="#757575"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Config Inputs -->
+        <EditText
+            android:id="@+id/edt_button_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Button Text to Search For"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Coordinate Inputs Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/edt_x_coord"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Fallback X (e.g. 540)"
+                android:inputType="number"
+                android:layout_marginEnd="4dp"/>
+
+            <EditText
+                android:id="@+id/edt_y_coord"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Fallback Y (e.g. 1850)"
+                android:inputType="number"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/edt_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tapping Duration (Seconds)"
+            android:inputType="number"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btn_save_config"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save &amp; Arm Configuration"
+            android:backgroundTint="#4CAF50"/>
+
+    </LinearLayout>
+</ScrollView>
