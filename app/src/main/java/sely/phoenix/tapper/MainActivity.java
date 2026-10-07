@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtDateTime = findViewById(R.id.txt_selected_datetime);
         EditText edtButtonText = findViewById(R.id.edt_button_text);
+        EditText edtBreakText = findViewById(R.id.edt_break_text);
         EditText edtXCoord = findViewById(R.id.edt_x_coord);
         EditText edtYCoord = findViewById(R.id.edt_y_coord);
         EditText edtDuration = findViewById(R.id.edt_duration);
@@ -35,10 +36,11 @@ public class MainActivity extends AppCompatActivity {
         // Fetch shared preference snapshot to populate previously saved runs
         SharedPreferences prefs = getSharedPreferences("TapperPrefs", Context.MODE_PRIVATE);
         edtButtonText.setText(prefs.getString("button_text", "Apply for unlocking"));
+        edtBreakText.setText(prefs.getString("break_text", "quota limit reached"));
         edtXCoord.setText(String.valueOf(prefs.getInt("x_coord", 450)));
         edtYCoord.setText(String.valueOf(prefs.getInt("y_coord", 2150)));
 
-        edtDuration.setText(String.valueOf(prefs.getInt("duration_secs", 30)));
+        edtDuration.setText(String.valueOf(prefs.getInt("duration_secs", 60)));
 
         findViewById(R.id.btn_open_settings).setOnClickListener(v ->
                 startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt("hour", targetHour);
             editor.putInt("minute", targetMinute);
             editor.putString("button_text", edtButtonText.getText().toString());
+            editor.putString("break_text", edtBreakText.getText().toString().trim());
             editor.putInt("x_coord", Integer.parseInt(edtXCoord.getText().toString().trim()));
             editor.putInt("y_coord", Integer.parseInt(edtYCoord.getText().toString().trim()));
             editor.putInt("duration_secs", Integer.parseInt(edtDuration.getText().toString().trim()));
