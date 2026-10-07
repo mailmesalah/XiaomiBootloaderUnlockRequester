@@ -1,3 +1,7 @@
+# ====================================================================
+# Android & Java/Kotlin Defaults
+# ====================================================================
+
 # Gradle files
 .gradle/
 build/
@@ -8,6 +12,7 @@ local.properties
 
 # Log/OS Files
 *.log
+.DS_Store
 
 # Android Studio generated files and folders
 captures/
@@ -17,12 +22,18 @@ captures/
 *.apk
 output-metadata.json
 
-# IntelliJ
+# IntelliJ / Android Studio
 *.iml
 .idea/
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
 
 # Keystore files
 *.jks
@@ -33,18 +44,44 @@ google-services.json
 
 # Android Profiling
 *.hprof
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+
+# ====================================================================
+# Visual Studio, C#, and WPF Defaults
+# ====================================================================
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Re]leasePublic/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bbin/
+obj/
+bin/
+
+# Visual Studio cache, logs, and diagnostics
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Roslyn Analyzers cache
+.stats/
+.config/dotnet-tools.json
+
+# WPF and XAML specific caches
+*.g.cs
+*.g.i.cs
+*.baml
+
+# Rider / Resharper (if using JetBrains for C#)
+_ReSharper*/
+*.csproj.user
+*.resharper.user
+
+# Visual Studio Code
+.vscode/
